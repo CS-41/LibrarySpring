@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View All Records</title>
+</head>
+<body>
+	<form>
+	<table>
+	<tr th:each="currentRecord: ${records}">
+		<td th:text="${currentRecord.id}" />
+		<td th:text="${currentRecord.library.libraryName}" />
+		<td th:text="${currentRecord.library.libraryAddress}" />
+		<td th:text="${currentRecord.book.title}" />
+		<td th:text="${currentRecord.book.author}" />
+		<td th:text="${currentRecord.book.deweyDecimal}" />
+		<td><a th:href="@{/edit/{id}(id=${currentRecord.id})}">Edit</a></td>
+		<td><a th:href="@{/delete/{id}(id=${currentRecord.id})}">Delete</a></td>
+		</tr>
+	</table>
+	</form>
+	<a href = "../inputRecord">Add a new Record</a>
+</body>
+</html>

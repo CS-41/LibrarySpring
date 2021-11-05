@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert New Record</title>
+</head>
+<body>
+	<form th:object="${newRecord}" th:action="@{/update/{id}(id=${newRecord.id})}" method=POST>
+	Library Name: <input name="library.libraryName" size="20" th:field="*{library.libraryName}"><br />
+	Library Address: <input name="library.libraryAddress" size="20" th:field="*{library.libraryAddress}"><br />
+	Title: <input name="book.title" size="20" th:field="*{book.title}"><br />
+	Author: <input name="book.author" size="20" th:field="*{book.author}"><br />
+	Dewey Decimal Number: <input name="book.deweyDecimal" size="20" th:field="*{book.deweyDecimal}"><br />
+	
+	<input name="Submit" type="submit" value="submit" />
+	</form>
+	<a href="../viewAll">View All Records</a>
+</body>
+</html>
