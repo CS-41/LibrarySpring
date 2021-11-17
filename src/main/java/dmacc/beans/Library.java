@@ -6,7 +6,6 @@
 package dmacc.beans;
 
 import javax.persistence.Embeddable;
-
 import lombok.Data;
 
 @Data

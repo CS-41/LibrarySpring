@@ -6,13 +6,13 @@
 </head>
 <body>
 	<form th:object="${newRecord}" th:action="@{/update/{id}(id=${newRecord.id})}" method=POST>
-	Library Name: <input name="library.libraryName" size="20" th:field="*{library.libraryName}"><br />
-	Library Address: <input name="library.libraryAddress" size="20" th:field="*{library.libraryAddress}"><br />
-	Title: <input name="book.title" size="20" th:field="*{book.title}"><br />
-	Author: <input name="book.author" size="20" th:field="*{book.author}"><br />
-	Dewey Decimal Number: <input name="book.deweyDecimal" size="20" th:field="*{book.deweyDecimal}"><br />
+	Library Name: <input name="library.libraryName" size="20" th:field="*{library.libraryName}" required placeholder="Enter library name"><br />
+	Library Address: <input name="library.libraryAddress" size="20" th:field="*{library.libraryAddress}" placeholder="Enter street address"><br />
+	Title: <input name="book.title" size="20" th:field="*{book.title}" required><br />
+	Author: <input name="book.author" size="20" th:field="*{book.author}" required placeholder="Enter full author name"><br />
+	Dewey Decimal Number: <input name="book.deweyDecimal" size="20" th:field="*{book.deweyDecimal}" type="number" min="100" max="999.999"><br />
 	
-	<input name="Submit" type="submit" value="submit" />
+	<input name="Submit" type="submit" value="submit">
 	</form>
 	<a href="../viewAll">View All Records</a>
 </body>

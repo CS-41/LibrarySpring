@@ -20,6 +20,7 @@ public class LibraryRecord {
 	@GeneratedValue
 	public long id;
 	@Autowired
+
 	public Library library;
 	@Autowired
 	public Book book;
